@@ -4,7 +4,9 @@
 
 - 在线Demo：http://xmall.exrick.cn/
 
-- 原作者 [qingjin](https://qingjin.me/) 二次开发 [yucccc](https://github.com/yucccc)
+- 高仿锤子商城官网轮播图，3D视差效果，实现后台可灵活配置，定时自动轮播
+
+- 原作者 [qingjin](https://qingjin.me/) ; 二次开发 [yucccc](https://github.com/yucccc) ; 本作者三次开发，且本人为后台开发人员，非专业前端，如有错误敬请谅解
 
 ![](http://oweupqzdv.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20180420222129.png)
 
