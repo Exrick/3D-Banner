@@ -3,7 +3,7 @@
     <div class="bg" ref="bg"
       @mouseover="bgOver($refs.bg)" @mousemove="bgMove($refs.bg,$event)" @mouseout="bgOut($refs.bg)">
       <transition name="fade">
-        <div v-for="(item, i) in banner" v-if="i===mark" :key="i" @click="linkTo(item)" @mouseover="stopTimer" @mouseout="startTimer">
+        <div class="imgs" v-for="(item, i) in banner" v-if="i===mark" :key="i" @click="linkTo(item)" @mouseover="stopTimer" @mouseout="startTimer">
           <img v-if="item.picUrl" class="img1" :src="item.picUrl"/>
           <img v-if="item.picUrl2"  class="img2 a" :src="item.picUrl2"/>
           <img v-if="item.picUrl3"  class="img3 b" :src="item.picUrl3"/>
@@ -98,7 +98,7 @@ export default {
     linkTo (item) {
       if (item.type === 0) {
         // 关联商品
-        window.location.href = 'http://xmall.exrick.cn/#/goodsDetails?productId='+item.productId
+        window.location.href = 'http://xmall.exrick.cn/#/goodsDetails?productId=' + item.productId
       } else {
         // 完整链接
         window.location.href = item.fullUrl
@@ -140,7 +140,7 @@ export default {
 </script>
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" rel="stylesheet/scss" scoped>
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -177,12 +177,14 @@ export default {
   transform-style: preserve-3d;
   transform-origin: 50% 50%;
   transform: rotateY(0deg) rotateX(0deg);
+  & div {
+    height: 100%;
+    width: 100%;
+  }
 }
 
-& div {
-  position: relative;
-  height: 100%;
-  width: 100%;
+.imgs {
+  position:absolute;
 }
 
 .img1 {
@@ -229,26 +231,23 @@ export default {
   width: 100%;
   top: 470px;
   z-index: 30;
-}
-
-.dots {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.dot-active {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  background-color: whitesmoke;
-  border-radius: 8px;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.dot {
-  opacity: 0.2;
+  .dots {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .dot-active {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background-color: whitesmoke;
+      border-radius: 8px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .dot {
+      opacity: 0.2;
+    }
+  }
 }
 </style>
